@@ -11,50 +11,30 @@
       "newline": true,
       "segments": [
         {
-          "type": "envvar",
+          "type": "python",
           "background": "transparent",
           "foreground": "#93d0ff",
+          "properties": {
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "display_default": true
+          },
           "style": "plain",
-          "properties": { "var_name": "CONDA_PROMPT_MODIFIER" },
-          "template": "{{ .Value }}"
-        },
-        {
-          "type": "envvar",
-          "background": "transparent",
-          "foreground": "#93d0ff",
-          "style": "plain",
-          "properties": { "var_name": "CONDA_DEFAULT_ENV" },
-          "template": "{{ if .Value }}({{ .Value }}){{ end }}"
-        },
-        {
-          "type": "envvar",
-          "background": "transparent",
-          "foreground": "#93d0ff",
-          "style": "plain",
-          "properties": { "var_name": "MAMBA_DEFAULT_ENV" },
-          "template": "{{ if .Value }}({{ .Value }}){{ end }}"
-        },
-        {
-          "type": "envvar",
-          "background": "transparent",
-          "foreground": "#93d0ff",
-          "style": "plain",
-          "properties": { "var_name": "VIRTUAL_ENV" },
-          "template": "{{ if .Value }}({{ .Value | base }}){{ end }}"
+          "template": "({{ .Venv }})"
         },
         {
           "type": "shell",
           "background": "transparent",
           "foreground": "p:white",
           "style": "plain",
-          "template": "  {{ .Name }}"
+          "template": " \uf489 {{ .Name }}"
         },
         {
           "type": "session",
           "background": "transparent",
           "foreground": "p:white",
           "style": "plain",
-          "template": "  {{ .HostName }}{{ .UserName }}"
+          "template": " \uf2c0 {{ .HostName }}\ue0bd{{ .UserName }}"
         },
         {
           "type": "text",
@@ -66,7 +46,7 @@
         {
           "type": "text",
           "background": "transparent",
-          "foreground": "#ffd75f",
+          "foreground": "p:white",
           "style": "plain",
           "template": "{{ .Folder }}"
         },
@@ -106,7 +86,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "❯"
+          "template": "\u276f"
         }
       ]
     }

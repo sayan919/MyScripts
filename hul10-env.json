@@ -11,11 +11,36 @@
       "newline": true,
       "segments": [
         {
-          "type": "text",
+          "type": "envvar",
           "background": "transparent",
           "foreground": "#93d0ff",
           "style": "plain",
-          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}({{ .Env.CONDA_DEFAULT_ENV }}){{ else if .Env.MAMBA_DEFAULT_ENV }}({{ .Env.MAMBA_DEFAULT_ENV }}){{ else if .Env.CONDA_PREFIX }}({{ .Env.CONDA_PREFIX | base }}){{ else if .Env.VIRTUAL_ENV }}({{ .Env.VIRTUAL_ENV | base }}){{ end }}"
+          "properties": { "var_name": "CONDA_PROMPT_MODIFIER" },
+          "template": "{{ .Value }}"
+        },
+        {
+          "type": "envvar",
+          "background": "transparent",
+          "foreground": "#93d0ff",
+          "style": "plain",
+          "properties": { "var_name": "CONDA_DEFAULT_ENV" },
+          "template": "{{ if .Value }}({{ .Value }}){{ end }}"
+        },
+        {
+          "type": "envvar",
+          "background": "transparent",
+          "foreground": "#93d0ff",
+          "style": "plain",
+          "properties": { "var_name": "MAMBA_DEFAULT_ENV" },
+          "template": "{{ if .Value }}({{ .Value }}){{ end }}"
+        },
+        {
+          "type": "envvar",
+          "background": "transparent",
+          "foreground": "#93d0ff",
+          "style": "plain",
+          "properties": { "var_name": "VIRTUAL_ENV" },
+          "template": "{{ if .Value }}({{ .Value | base }}){{ end }}"
         },
         {
           "type": "shell",

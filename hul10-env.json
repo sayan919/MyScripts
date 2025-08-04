@@ -44,15 +44,11 @@
                     "template": " · "
                 },
                 {
-                    "type": "executiontime",
+                    "type": "text",
                     "background": "transparent",
-                    "foreground": "#b3ffde",
-                    "properties": {
-                        "style": "austin",
-                        "threshold": 0
-                    },
+                    "foreground": "#ffd75f",
                     "style": "plain",
-                    "template": "{{ .FormattedMs }}"
+                    "template": " {{ .Folder }}"
                 },
                 {
                     "type": "text",
@@ -62,14 +58,15 @@
                     "template": " · "
                 },
                 {
-                    "type": "time",
+                    "type": "executiontime",
                     "background": "transparent",
                     "foreground": "#b3ffde",
                     "properties": {
-                        "time_format": "02/01/06 15:04"
+                        "style": "austin",
+                        "threshold": 0
                     },
                     "style": "plain",
-                    "template": "{{ .CurrentDate | date .Format }}"
+                    "template": "{{ .FormattedMs }}"
                 }
             ]
         },

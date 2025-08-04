@@ -11,16 +11,23 @@
       "newline": true,
       "segments": [
         {
+          "type": "conda",
+          "background": "transparent",
+          "foreground": "#93d0ff",
+          "style": "plain",
+          "template": "({{ .Name }})"
+        },
+        {
           "type": "python",
           "background": "transparent",
           "foreground": "#93d0ff",
           "properties": {
             "display_mode": "environment",
             "fetch_virtual_env": true,
-            "display_default": true
+            "display_default": false
           },
           "style": "plain",
-          "template": "({{ .Venv }})"
+          "template": "{{ if .Venv }}({{ .Venv }}){{ end }}"
         },
         {
           "type": "shell",

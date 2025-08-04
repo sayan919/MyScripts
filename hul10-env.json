@@ -11,37 +11,25 @@
       "newline": true,
       "segments": [
         {
-          "type": "conda",
+          "type": "text",
           "background": "transparent",
           "foreground": "#93d0ff",
           "style": "plain",
-          "template": "({{ .Name }})"
-        },
-        {
-          "type": "python",
-          "background": "transparent",
-          "foreground": "#93d0ff",
-          "properties": {
-            "display_mode": "environment",
-            "fetch_virtual_env": true,
-            "display_default": false
-          },
-          "style": "plain",
-          "template": "{{ if .Venv }}({{ .Venv }}){{ end }}"
+          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}({{ .Env.CONDA_DEFAULT_ENV }}){{ else if .Env.MAMBA_DEFAULT_ENV }}({{ .Env.MAMBA_DEFAULT_ENV }}){{ else if .Env.CONDA_PREFIX }}({{ .Env.CONDA_PREFIX | base }}){{ else if .Env.VIRTUAL_ENV }}({{ .Env.VIRTUAL_ENV | base }}){{ end }}"
         },
         {
           "type": "shell",
           "background": "transparent",
           "foreground": "p:white",
           "style": "plain",
-          "template": " \uf489 {{ .Name }}"
+          "template": "  {{ .Name }}"
         },
         {
           "type": "session",
           "background": "transparent",
           "foreground": "p:white",
           "style": "plain",
-          "template": " \uf2c0 {{ .HostName }}\ue0bd{{ .UserName }}"
+          "template": "  {{ .HostName }}{{ .UserName }}"
         },
         {
           "type": "text",
@@ -93,7 +81,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\u276f"
+          "template": "❯"
         }
       ]
     }

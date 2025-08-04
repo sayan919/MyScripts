@@ -46,7 +46,7 @@
         {
           "type": "text",
           "background": "transparent",
-          "foreground": "p:white",
+          "foreground": "#ffd75f",
           "style": "plain",
           "template": "{{ .Folder }}"
         },

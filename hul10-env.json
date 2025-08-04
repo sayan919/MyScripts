@@ -27,14 +27,21 @@
                     "background": "transparent",
                     "foreground": "p:white",
                     "style": "plain",
-                    "template": " \uf489 {{ .Name }}"
+                    "template": "  {{ .Name }} "
+                },
+                {
+                    "type": "text",
+                    "background": "transparent",
+                    "foreground": "#b3ffde",
+                    "style": "plain",
+                    "template": "· "
                 },
                 {
                     "type": "session",
                     "background": "transparent",
                     "foreground": "p:white",
                     "style": "plain",
-                    "template": " \uf2c0 {{ .HostName }}\ue0bd{{ .UserName }}"
+                    "template": "\uf2c0 {{ .HostName }}"
                 },
                 {
                     "type": "text",
@@ -48,7 +55,7 @@
                     "background": "transparent",
                     "foreground": "#ffd75f",
                     "style": "plain",
-                    "template": " {{ .Folder }}"
+                    "template": "\uf07b {{ .Folder }}"
                 },
                 {
                     "type": "text",
